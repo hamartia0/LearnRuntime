@@ -21,12 +21,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self.webView loadRequest:[self generateReqWithStr:@"https://www.baidu.com"]];
+    [self.webView loadRequest:[self generateReqWithStr:@"https://www.baidu.com/中文"]];
 }
 
 - (NSURLRequest *)generateReqWithStr:(NSString *)str {
-//    NSURL *url = [NSURL URLWithString:str];
-    NSURL *url = [NSURL HHY_URLWithString:str];
+    NSURL *url = [NSURL URLWithString:str];
+//    NSURL *url = [NSURL HHY_URLWithString:str];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     
     return req;

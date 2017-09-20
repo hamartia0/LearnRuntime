@@ -7,11 +7,20 @@
 //
 
 #import "NSURL+Security.h"
+#import <objc/message.h>
 
 @implementation NSURL (Security)
 
++ (void)load {
+    
+    Method oldMethod = class_getClassMethod([NSURL class], @selector(URLWithString:));
+    Method newMethod = class_getClassMethod([NSURL class], @selector(HHY_URLWithString:));
+    
+    method_exchangeImplementations(oldMethod, newMethod);
+}
+
 + (instancetype)HHY_URLWithString:(NSString *)str {
-    NSURL *url = [NSURL URLWithString:str];
+    NSURL *url = [NSURL HHY_URLWithString:str];
     if (url == nil) {
         NSLog(@"URL 为空");
         return nil;

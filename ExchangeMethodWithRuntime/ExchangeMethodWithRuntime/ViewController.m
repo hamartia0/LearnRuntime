@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "NSURL+Security.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -17,8 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self.webView loadRequest:[self generateReqWithStr:@"https://www.baidu.com"]];
 }
 
+- (NSURLRequest *)generateReqWithStr:(NSString *)str {
+//    NSURL *url = [NSURL URLWithString:str];
+    NSURL *url = [NSURL HHY_URLWithString:str];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    
+    return req;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

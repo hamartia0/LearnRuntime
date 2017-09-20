@@ -13,6 +13,7 @@
 		95AFCC211F7218CE00973DD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AFCC1F1F7218CE00973DD7 /* Main.storyboard */; };
 		95AFCC231F7218CE00973DD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AFCC221F7218CE00973DD7 /* Assets.xcassets */; };
 		95AFCC261F7218CE00973DD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AFCC241F7218CE00973DD7 /* LaunchScreen.storyboard */; };
+		95AFCC2F1F721FA400973DD7 /* NSURL+Security.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AFCC2E1F721FA400973DD7 /* NSURL+Security.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		95AFCC221F7218CE00973DD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95AFCC251F7218CE00973DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95AFCC271F7218CE00973DD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95AFCC2D1F721FA400973DD7 /* NSURL+Security.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Security.h"; sourceTree = "<group>"; };
+		95AFCC2E1F721FA400973DD7 /* NSURL+Security.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Security.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				95AFCC1A1F7218CE00973DD7 /* AppDelegate.m */,
 				95AFCC1C1F7218CE00973DD7 /* ViewController.h */,
 				95AFCC1D1F7218CE00973DD7 /* ViewController.m */,
+				95AFCC2D1F721FA400973DD7 /* NSURL+Security.h */,
+				95AFCC2E1F721FA400973DD7 /* NSURL+Security.m */,
 				95AFCC1F1F7218CE00973DD7 /* Main.storyboard */,
 				95AFCC221F7218CE00973DD7 /* Assets.xcassets */,
 				95AFCC241F7218CE00973DD7 /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 			files = (
 				95AFCC1E1F7218CE00973DD7 /* ViewController.m in Sources */,
 				95AFCC1B1F7218CE00973DD7 /* AppDelegate.m in Sources */,
+				95AFCC2F1F721FA400973DD7 /* NSURL+Security.m in Sources */,
 				95AFCC181F7218CE00973DD7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,10 +11,7 @@
 @implementation FakeObserver
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    NSString *oldValue = [change objectForKey:NSKeyValueChangeOldKey];
-    NSString *newValue = [change objectForKey:NSKeyValueChangeNewKey];
-    
-    NSLog(@"Observed keyPath:%@ of object:%@ changed value from %@ to %@", keyPath, object, oldValue, newValue);
+    NSLog(@"通过context跳转到了父类来处理");
 }
 
 @end

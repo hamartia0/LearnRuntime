@@ -8,6 +8,8 @@
 
 #import "FakeObserver.h"
 
+extern int contextForKVO;
+
 @interface FakeSubObserver : FakeObserver
 
 @end

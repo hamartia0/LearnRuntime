@@ -30,14 +30,18 @@
 
 - (void)updateLastTime:(NSTimer *)t {
     NSDate *now = [NSDate date];
-    [self setLastTime:now];
-    
-//    NSLog(@"Just set time to %@", self.lastTimeString);
+//    [self setLastTime:now];
+    [self willChangeValueForKey:@"lastTime"];
+    _lastTime = now;
+    [self didChangeValueForKey:@"lastTime"];
+    NSLog(@"Just set time to %@", self.lastTimeString);
+}
+
++ (NSSet<NSString *> *)keyPathsForValuesAffectingLastTimeString {
+    return [NSSet setWithObject:@"lastTime"];
 }
 
 @end
-
-static int KVOcontext;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -46,8 +50,8 @@ int main(int argc, const char * argv[]) {
         
         __unused NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:logger selector:@selector(updateLastTime:) userInfo:nil repeats:YES];
         
-        FakeObserver *observer = [FakeObserver new];
-        [logger addObserver:observer forKeyPath:@"lastTime" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
+        FakeSubObserver *observer = [FakeSubObserver new];
+        [logger addObserver:observer forKeyPath:@"lastTimeString" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:&contextForKVO];
         
         [[NSRunLoop currentRunLoop] run];
     }
